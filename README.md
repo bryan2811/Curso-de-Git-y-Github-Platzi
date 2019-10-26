@@ -38,6 +38,9 @@
   - [Conexión a GitHub con SSH](#conexi%c3%b3n-a-github-con-ssh)
   - [Tags y versiones en Git y GitHub](#tags-y-versiones-en-git-y-github)
   - [Manejo de ramas en GitHub](#manejo-de-ramas-en-github)
+  - [Configurar múltiples colaboradores en un repositorio de GitHub](#configurar-m%c3%baltiples-colaboradores-en-un-repositorio-de-github)
+  - [Flujo de trabajo profesional con Pull requests](#flujo-de-trabajo-profesional-con-pull-requests)
+  - [Caso ejemplo: Error tipográfico en la rama master](#caso-ejemplo-error-tipogr%c3%a1fico-en-la-rama-master)
   - [Ignorar archivos en el respositorio con .gitignore](#ignorar-archivos-en-el-respositorio-con-gitignore)
   - [Readme.md es una excelente práctica](#readmemd-es-una-excelente-pr%c3%a1ctica)
   - [Tu sitio web público con GitHub Pages](#tu-sitio-web-p%c3%bablico-con-github-pages)
@@ -480,28 +483,46 @@ Los tags o etiquetas nos permiten asignar versiones a los commits con cambios m�
 **Comandos para trabajar con etiquetas:**
 
 - **Crear un nuevo tag y asignarlo a un commit:**
-  ```git tag -a nombre-del-tag id-del-commit.```
+  ```
+  git tag -a nombre-del-tag id-del-commit
+  ```
 - **Borrar un tag en el repositorio local:** 
-  ```git tag -d nombre-del-tag```
+  ```
+  git tag -d nombre-del-tag
+  ```
 - **Listar los tags de nuestro repositorio local:** 
-  ```git tag o git show-refs --tags```
+  ```
+  git tag o git show-refs --tags
+  ```
 - **Publicar un tag en el repositorio remoto:**
-  ```git push origin --tags```
+  ```
+  git push origin --tags
+  ```
 - **Borrar un tag del repositorio remoto:**
-  ```git tag -d nombre-del-tag``` 
-  ```git push origin :refs/tags/nombre-del-tag```
+  ```
+  git tag -d nombre-del-tag
+  ``` 
+  ```
+  git push origin :refs/tags/nombre-del-tag
+  ```
 
 ## Manejo de ramas en GitHub
 
 Puedes trabajar con ramas que nunca envias a GitHub, así como pueden haber ramas importantes en GitHub que nunca usas en el repositorio local. Lo importantes que aprendas a manejarlas para trabajar profesionalmente.
 
 **Crear una rama en el repositorio local:**
-```git branch nombre-de-la-rama```
-```git checkout -b nombre-de-la-rama```
+```
+git branch nombre-de-la-rama
+```
+```
+git checkout -b nombre-de-la-rama
+```
 
 **Publicar una rama local al repositorio remoto:**
 
-```git push origin nombre-de-la-rama.```
+```
+git push origin nombre-de-la-rama
+```
 
 Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git usando el comando **`gitk`**
 
@@ -560,8 +581,12 @@ GitHub tiene un servicio de hosting gratis llamado GitHub Pages, tu puedes tener
 El comando `rebase` es una mala práctica, nunca se debe usar, pero para efectos de curso te lo vamos a enseñar para que hagas tus propios experimentos. **Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.**
 
 > **Cambiamos a la rama que queremos traer los cambios:**
-> ```git checkout experiment```
+> ```
+> git checkout experiment
+> ```
 
 > **Aplicamos rebase para traer los cambios de la rama que queremos:**
->```git rebase master```
+>```
+git rebase master
+```
 
