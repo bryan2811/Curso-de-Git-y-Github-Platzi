@@ -586,7 +586,6 @@ El comando `rebase` es una mala práctica, nunca se debe usar, pero para efectos
 > ```
 
 > **Aplicamos rebase para traer los cambios de la rama que queremos:**
->```
+```
 git rebase master
 ```
-
