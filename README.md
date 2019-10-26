@@ -582,7 +582,7 @@ El comando `rebase` es una mala práctica, nunca se debe usar, pero para efectos
 
 > **Cambiamos a la rama que queremos traer los cambios:**
 > ```
-> git checkout experiment
+git checkout experiment
 > ```
 
 > **Aplicamos rebase para traer los cambios de la rama que queremos:**
