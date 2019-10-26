@@ -44,7 +44,7 @@
   - [Git Rebase: Reorganizando el trabajo realizado](#git-rebase-reorganizando-el-trabajo-realizado)
 
 ## Recursos
-- **PDF del curso:** [Git-Github](Curso-git-github.pdf)
+- **PDF del curso:** [Git-Github]([Curso-git-github.pdf](https://static.platzi.com/media/public/uploads/git-github_917f1c24-de6d-4d30-99ca-f47214e6ae16.pdf))
 
 ## Usar un sistema de control de versiones como Git
 
