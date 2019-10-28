@@ -38,6 +38,7 @@
   - [Conexión a GitHub con SSH](#conexi%c3%b3n-a-github-con-ssh)
   - [Tags y versiones en Git y GitHub](#tags-y-versiones-en-git-y-github)
   - [Manejo de ramas en GitHub](#manejo-de-ramas-en-github)
+  - [Ver gráficamente nuestro entorno y flujo de trabajo local en Git](#ver-gr%c3%a1ficamente-nuestro-entorno-y-flujo-de-trabajo-local-en-git)
   - [Configurar múltiples colaboradores en un repositorio de GitHub](#configurar-m%c3%baltiples-colaboradores-en-un-repositorio-de-github)
   - [Flujo de trabajo profesional con Pull requests](#flujo-de-trabajo-profesional-con-pull-requests)
   - [Caso ejemplo: Error tipográfico en la rama master](#caso-ejemplo-error-tipogr%c3%a1fico-en-la-rama-master)
@@ -45,6 +46,12 @@
   - [Readme.md es una excelente práctica](#readmemd-es-una-excelente-pr%c3%a1ctica)
   - [Tu sitio web público con GitHub Pages](#tu-sitio-web-p%c3%bablico-con-github-pages)
   - [Git Rebase: Reorganizando el trabajo realizado](#git-rebase-reorganizando-el-trabajo-realizado)
+  - [Git Stash: Guardar cambios en memoria y recuperarlos después](#git-stash-guardar-cambios-en-memoria-y-recuperarlos-despu%c3%a9s)
+  - [Git Clean: Limpiar tu proyecto de archivos no deseados](#git-clean-limpiar-tu-proyecto-de-archivos-no-deseados)
+  - [Reconstruír commits en Git con amend](#reconstru%c3%adr-commits-en-git-con-amend)
+  - [Git Reset y Reflog: Úsese en caso de emergencia](#git-reset-y-reflog-%c3%9asese-en-caso-de-emergencia)
+  - [Buscar en archivos y commits de Git con Grep y log](#buscar-en-archivos-y-commits-de-git-con-grep-y-log)
+  - [Comandos y recursos colaborativos en Git y Github](#comandos-y-recursos-colaborativos-en-git-y-github)
 
 ## Recursos
 - **PDF del curso:** [Git-Github](https://static.platzi.com/media/public/uploads/git-github_917f1c24-de6d-4d30-99ca-f47214e6ae16.pdf)
@@ -330,7 +337,23 @@ Estos servidores remotos pueden estar alojados en **GitHub, GitLab, BitBucket, e
 
 Las ramas son la forma de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.
 
-La cabecera o HEAD representan la rama y el commit de esa rama donde estamos trabajando. Por defecto, esta cabecera aparecerá en el último commit de nuestra rama principal. Pero podemos cambiarlo al crear una rama **(git branch rama, git checkout -b rama)** o movernos en el tiempo a cualquier otro commit de cualquier otra rama con los comandos **(git reset id-commit, git checkout rama-o-id-commit)**.
+La cabecera o HEAD representan la rama y el commit de esa rama donde estamos trabajando. Por defecto, esta cabecera aparecerá en el último commit de nuestra rama principal. **Pero podemos cambiarlo al crear una rama:**
+```
+git branch rama
+git checkout -b rama
+```
+
+**O movernos en el tiempo a cualquier otro commit de cualquier otra rama con los comandos:**
+```
+git reset id-commit 
+git checkout rama-o-id-commit
+```
+
+**O eliminar una rama desde Git:**
+```
+git branch -D nombre-de-la-rama
+```
+
 
 ## Fusión de ramas con Git merge
 
@@ -338,16 +361,16 @@ El comando **`git merge`** nos permite crear un nuevo commit con la combinación
 
 **Crear un nuevo commit en la rama master combinando**
 **los cambios de la rama cabecera:**
-> ```
-> git checkout master
-> git merge cabecera
-> ```
+```
+git checkout master
+git merge cabecera
+```
 
 **Crear un nuevo commit en la rama cabecera combinando los cambios de cualquier otra rama:**
-> ```
-> git checkout cabecera
-> git merge cualquier-otra-rama
-> ```
+```
+git checkout cabecera
+git merge cualquier-otra-rama
+```
 
 Asombroso, ¿verdad? Es como si Git tuviera super poderes para saber qué cambios queremos conservar de una rama y qué otros de la otra. El problema es que no siempre puede adivinar, sobretodo en algunos casos donde dos ramas tienen actualizaciones diferentes en ciertas líneas en los archivos. Esto lo conocemos como un conflicto y aprenderemos a solucionarlos en la siguiente clase.
 
@@ -524,6 +547,22 @@ git checkout -b nombre-de-la-rama
 git push origin nombre-de-la-rama
 ```
 
+**Eliminar ramas remotas desde Git:**
+
+Puedes borrar la rama remota desde git utilizando este comando:
+
+```
+git push nombre-remoto :nombre-de-la-rama
+```
+
+**Por ejemplo, si quieres borrar la rama bugfix del servidor, puedes utilizar:**
+
+```
+git push origin :bugfix
+```
+
+## Ver gráficamente nuestro entorno y flujo de trabajo local en Git
+
 Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git usando el comando **`gitk`**
 
 ## Configurar múltiples colaboradores en un repositorio de GitHub
@@ -556,7 +595,7 @@ $ git push origin fix-typo
 
 **Luego se crea un nuevo Pull Request de master con fix-typo (En GitHub)**
 
-Se puede asignar el Pull Request a un miembro, o agregar miembros para que le hagan review, luego hay que "Crear el pull request" y el request pasa al: **Proceso de Code Review**
+Se puede asignar el Pull Request a un miembro, o agregar miembros para que le hagan review, luego hay que "Crear el pull request" y el request pasa al proceso de: **Code Review**
 
 Los reviewers pueden pedir cambios o aprobar el **Pull Request**, al terminar esto, quien sea que este a cargo de realizar los merge, debe realizarlo.
 **(Se debe respetar quien es el que hace los merges para tener consistencia en los Code Reviews).**
@@ -578,7 +617,7 @@ GitHub tiene un servicio de hosting gratis llamado GitHub Pages, tu puedes tener
 
 ## Git Rebase: Reorganizando el trabajo realizado
 
-El comando `rebase` es una mala práctica, nunca se debe usar, pero para efectos de curso te lo vamos a enseñar para que hagas tus propios experimentos. **Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.**
+El comando `rebase` es **una mala práctica, nunca se debe usar**, pero para efectos de curso te lo vamos a enseñar para que hagas tus propios experimentos. **Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.**
 
 **Cambiamos a la rama que queremos traer los cambios:**
 ```
@@ -588,4 +627,109 @@ git checkout experiment
 **Aplicamos rebase para traer los cambios de la rama que queremos:**
 ```
 git rebase master
+```
+
+## Git Stash: Guardar cambios en memoria y recuperarlos después
+
+Cuando necesitamos regresar en el tiempo porque borramos alguna línea de código pero no queremos pasarnos a otra rama porque nos daría un error ya que debemos pasar ese **“mal cambio”** que hicimos a stage, podemos usar `git stash` para regresar el cambio anterior que hicimos.
+
+`git stash` es típico cuando estamos cambios que no merecen una rama o no merecen un rebase si no simplemente estamos probando algo y luego quieres volver rápidamente a tu versión anterior la cual es la correcta.
+
+![git-stash](https://static.platzi.com/media/user_upload/lol-05d691f0-6747-4697-babf-51fb46ccdf7c.jpg)
+
+## Git Clean: Limpiar tu proyecto de archivos no deseados
+
+A veces creamos archivos cuando estamos realizando nuestro proyecto que realmente no forman parte de nuestro directorio de trabajo, que no se debería agregar y lo sabemos.
+
+**Para saber qué archivos vamos a borrar tecleamos:**
+```
+git clean --dry-run
+```
+
+**Para borrar todos los archivos listados (que no son carpetas) tecleamos:**
+```
+git clean -f
+```
+
+## Reconstruír commits en Git con amend
+
+A veces hacemos un commit, pero resulta que no queríamos mandarlo porque faltaba algo más. Utilizamos `git commit --amend`, **amend en inglés es remendar** y lo que hará es que los cambios que hicimos nos lo agregará al commit anterior.
+
+Si el caso es que únicamente olvidamos incluir archivos al commit **y el mensaje que habíamos ingresado estaba bien**, también podríamos ejecutar el siguiente comando:
+```
+gitcommit--amend--no-edit
+```
+
+Con el `--no-edit` además de todo lo que significa el `--amend` estamos diciéndole a git que utilice el mensaje que ya habíamos ingresado.
+
+## Git Reset y Reflog: Úsese en caso de emergencia
+
+¿Qué pasa cuando todo se rompe y no sabemos qué está pasando? Con git reset HashDelHEAD nos devolveremos al estado en que el proyecto funcionaba.
+
+git reset --soft HashDelHEAD te mantiene lo que tengas en staging ahí.
+git reset --hard HashDelHEAD resetea absolutamente todo incluyendo lo que tengas en staging.
+
+git reset es una mala práctica, no deberías usarlo en ningún momento; debe ser nuestro último recurso.
+
+## Buscar en archivos y commits de Git con Grep y log
+
+A medida que nuestro proyecto se hace grande vamos a querer buscar ciertas cosas.
+
+**Por ejemplo: ¿cuántas veces en nuestro proyecto utilizamos la palabra color?**
+
+Para buscar utilizamos el comando `git grep color` y nos buscará en todo el proyecto los archivos en donde está la palabra **color**.
+
+Con `git grep -n color` nos saldrá un output el cual nos dirá en **qué línea está lo que estamos buscando.**
+
+Con `git grep -c color` nos saldrá un output el cual nos dirá **cuántas veces se repite esa palabra y en qué archivo.**
+
+Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con `git grep -c "<p>"`
+
+## Comandos y recursos colaborativos en Git y Github
+
+1. **Comando para ver cuántos commits ha hecho cada miembro del equipo:**
+```
+git shortlog -sn
+git shortlog -sn -all
+git shortlog -sn -all --no-merges
+```
+
+**Crear un shortcode en Git para el shortlog:**
+
+```
+git config --global alias.stats "shortlog -sn -all --no-merges"
+```
+
+**Ejecutarlo:**
+```
+git stats
+```
+
+2. **Saber quién hizo qué:**
+
+```
+git blame -c nombre-del-archivo / git blame -c index.html
+```
+
+3. **Saber cómo funciona un comando**
+
+```
+git blame --help / Mostrará una guía de su funcionamiento
+```
+
+4. **Ver las ramas de Git y Github**
+
+**Ver las ramas locales:**
+```
+git branch
+```
+
+**Ver las ramas remotas:**
+```
+git branch -r
+```
+
+**Ver todas las ramas:**
+```
+git branch -a
 ```
