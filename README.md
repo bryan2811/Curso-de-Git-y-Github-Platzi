@@ -1,60 +1,69 @@
 ![preview-couse](https://miro.medium.com/max/2732/1*mtsk3fQ_BRemFidhkel3dA.png)
 
 # Curso de Git y Github en Platzi 🔥
+- **PDF del curso:** [Git-Github](https://static.platzi.com/media/public/uploads/git-github_917f1c24-de6d-4d30-99ca-f47214e6ae16.pdf)
 
 ## Temario
-<!-- ### Introducción a Git -->
 
-- [Curso de Git y Github en Platzi 🔥](#curso-de-git-y-github-en-platzi-%f0%9f%94%a5)
-  - [Temario](#temario)
-  - [Recursos](#recursos)
-  - [Usar un sistema de control de versiones como Git](#usar-un-sistema-de-control-de-versiones-como-git)
-  - [Instalando Git y GitBash en Windows](#instalando-git-y-gitbash-en-windows)
-    - [Pasos](#pasos)
-  - [Instalando Git en OSX](#instalando-git-en-osx)
-  - [Instalando Git en Linux](#instalando-git-en-linux)
-  - [Tipos de archivos y sus diferencias](#tipos-de-archivos-y-sus-diferencias)
-  - [Introducción a la terminal y línea de comandos](#introducci%c3%b3n-a-la-terminal-y-l%c3%adnea-de-comandos)
-    - [Diferencias entre la estructura de archivos de Windows, Mac o Linux.](#diferencias-entre-la-estructura-de-archivos-de-windows-mac-o-linux)
-    - [Comandos básicos en la terminal:](#comandos-b%c3%a1sicos-en-la-terminal)
-  - [Qué es staging, repositorios y cuál es el ciclo básico de trabajo en GitHub](#qu%c3%a9-es-staging-repositorios-y-cu%c3%a1l-es-el-ciclo-b%c3%a1sico-de-trabajo-en-github)
-    - [Ciclo de vida o estados de los archivos en Git:](#ciclo-de-vida-o-estados-de-los-archivos-en-git)
-    - [Comandos para mover archivos entre los estados de Git:](#comandos-para-mover-archivos-entre-los-estados-de-git)
-  - [¿Qué es un Branch (rama) y cómo funciona un Merge en Git?](#%c2%bfqu%c3%a9-es-un-branch-rama-y-c%c3%b3mo-funciona-un-merge-en-git)
-  - [Crea un repositorio de Git y haz tu primer commit](#crea-un-repositorio-de-git-y-haz-tu-primer-commit)
-  - [Analizar cambios en los archivos de tu proyecto con Git](#analizar-cambios-en-los-archivos-de-tu-proyecto-con-git)
-  - [Volver en el tiempo en nuestro repositorio utilizando branches y checkout](#volver-en-el-tiempo-en-nuestro-repositorio-utilizando-branches-y-checkout)
-  - [git reset vs git rm](#git-reset-vs-git-rm)
-    - [git rm](#git-rm)
-  - [Flujo de trabajo básico con un repositorio remoto](#flujo-de-trabajo-b%c3%a1sico-con-un-repositorio-remoto)
-  - [Introducción a las ramas o branches de Git](#introducci%c3%b3n-a-las-ramas-o-branches-de-git)
-  - [Fusión de ramas con Git merge](#fusi%c3%b3n-de-ramas-con-git-merge)
-  - [Solución de conflictos al hacer un merge](#soluci%c3%b3n-de-conflictos-al-hacer-un-merge)
-  - [Uso de Github](#uso-de-github)
-  - [Cómo funcionan las llaves públicas y privadas](#c%c3%b3mo-funcionan-las-llaves-p%c3%bablicas-y-privadas)
-  - [Configura tus llaves SSH en local](#configura-tus-llaves-ssh-en-local)
-      - [En Windows y Linux:](#en-windows-y-linux)
-      - [En Mac](#en-mac)
-  - [Conexión a GitHub con SSH](#conexi%c3%b3n-a-github-con-ssh)
-  - [Tags y versiones en Git y GitHub](#tags-y-versiones-en-git-y-github)
-  - [Manejo de ramas en GitHub](#manejo-de-ramas-en-github)
-  - [Ver gráficamente nuestro entorno y flujo de trabajo local en Git](#ver-gr%c3%a1ficamente-nuestro-entorno-y-flujo-de-trabajo-local-en-git)
-  - [Configurar múltiples colaboradores en un repositorio de GitHub](#configurar-m%c3%baltiples-colaboradores-en-un-repositorio-de-github)
-  - [Flujo de trabajo profesional con Pull requests](#flujo-de-trabajo-profesional-con-pull-requests)
-  - [Caso ejemplo: Error tipográfico en la rama master](#caso-ejemplo-error-tipogr%c3%a1fico-en-la-rama-master)
-  - [Ignorar archivos en el respositorio con .gitignore](#ignorar-archivos-en-el-respositorio-con-gitignore)
-  - [Readme.md es una excelente práctica](#readmemd-es-una-excelente-pr%c3%a1ctica)
-  - [Tu sitio web público con GitHub Pages](#tu-sitio-web-p%c3%bablico-con-github-pages)
-  - [Git Rebase: Reorganizando el trabajo realizado](#git-rebase-reorganizando-el-trabajo-realizado)
-  - [Git Stash: Guardar cambios en memoria y recuperarlos después](#git-stash-guardar-cambios-en-memoria-y-recuperarlos-despu%c3%a9s)
-  - [Git Clean: Limpiar tu proyecto de archivos no deseados](#git-clean-limpiar-tu-proyecto-de-archivos-no-deseados)
-  - [Reconstruír commits en Git con amend](#reconstru%c3%adr-commits-en-git-con-amend)
-  - [Git Reset y Reflog: Úsese en caso de emergencia](#git-reset-y-reflog-%c3%9asese-en-caso-de-emergencia)
-  - [Buscar en archivos y commits de Git con Grep y log](#buscar-en-archivos-y-commits-de-git-con-grep-y-log)
-  - [Comandos y recursos colaborativos en Git y Github](#comandos-y-recursos-colaborativos-en-git-y-github)
+### Introducción a Git
 
-## Recursos
-- **PDF del curso:** [Git-Github](https://static.platzi.com/media/public/uploads/git-github_917f1c24-de6d-4d30-99ca-f47214e6ae16.pdf)
+- [Usar un sistema de control de versiones como Git](#usar-un-sistema-de-control-de-versiones-como-git)
+- [Instalando Git y GitBash en Windows](#instalando-git-y-gitbash-en-windows)
+  - [Pasos](#pasos)
+- [Instalando Git en OSX](#instalando-git-en-osx)
+- [Instalando Git en Linux](#instalando-git-en-linux)
+- [Tipos de archivos y sus diferencias](#tipos-de-archivos-y-sus-diferencias)
+- [Introducción a la terminal y línea de comandos](#introducci%c3%b3n-a-la-terminal-y-l%c3%adnea-de-comandos)
+- [Diferencias entre la estructura de archivos de Windows, Mac o Linux.](#diferencias-entre-la-estructura-de-archivos-de-windows-mac-o-linux)
+- [Comandos básicos en la terminal:](#comandos-b%c3%a1sicos-en-la-terminal)
+
+### Comandos básicos en Git
+- [Qué es staging, repositorios y cuál es el ciclo básico de trabajo en GitHub](#qu%c3%a9-es-staging-repositorios-y-cu%c3%a1l-es-el-ciclo-b%c3%a1sico-de-trabajo-en-github)
+- [Ciclo de vida o estados de los archivos en Git:](#ciclo-de-vida-o-estados-de-los-archivos-en-git)
+- [Comandos para mover archivos entre los estados de Git:](#comandos-para-mover-archivos-entre-los-estados-de-git)
+- [Qué es un Branch (rama) y cómo funciona un Merge en Git](#qu%c3%a9-es-un-branch-rama-y-c%c3%b3mo-funciona-un-merge-en-git)
+- [Crea un repositorio de Git y haz tu primer commit](#crea-un-repositorio-de-git-y-haz-tu-primer-commit)
+- [Analizar cambios en los archivos de tu proyecto con Git](#analizar-cambios-en-los-archivos-de-tu-proyecto-con-git)
+- [Volver en el tiempo en nuestro repositorio utilizando branches y checkout](#volver-en-el-tiempo-en-nuestro-repositorio-utilizando-branches-y-checkout)
+- [git reset vs git rm](#git-reset-vs-git-rm)
+- [git rm](#git-rm)
+
+### Flujo de trabajo básico en Git
+- [Flujo de trabajo básico con un repositorio remoto](#flujo-de-trabajo-b%c3%a1sico-con-un-repositorio-remoto)
+- [Introducción a las ramas o branches de Git](#introducci%c3%b3n-a-las-ramas-o-branches-de-git)
+- [Fusión de ramas con Git merge](#fusi%c3%b3n-de-ramas-con-git-merge)
+- [Solución de conflictos al hacer un merge](#soluci%c3%b3n-de-conflictos-al-hacer-un-merge)
+
+### Trabajando con repositorios remotos en Github
+- [Uso de Github](#uso-de-github)
+- [Cómo funcionan las llaves públicas y privadas](#c%c3%b3mo-funcionan-las-llaves-p%c3%bablicas-y-privadas)
+- [Configura tus llaves SSH en local](#configura-tus-llaves-ssh-en-local)
+- [En Windows y Linux:](#en-windows-y-linux)
+- [En Mac](#en-mac)
+- [Conexión a GitHub con SSH](#conexi%c3%b3n-a-github-con-ssh)
+- [Tags y versiones en Git y GitHub](#tags-y-versiones-en-git-y-github)
+- [Manejo de ramas en GitHub](#manejo-de-ramas-en-github)
+- [Ver gráficamente nuestro entorno y flujo de trabajo local en Git](#ver-gr%c3%a1ficamente-nuestro-entorno-y-flujo-de-trabajo-local-en-git)
+- [Configurar múltiples colaboradores en un repositorio de GitHub](#configurar-m%c3%baltiples-colaboradores-en-un-repositorio-de-github)
+
+### Flujos de trabajo profesionales
+- [Flujo de trabajo profesional con Pull requests](#flujo-de-trabajo-profesional-con-pull-requests)
+- [Caso ejemplo: Error tipográfico en la rama master](#caso-ejemplo-error-tipogr%c3%a1fico-en-la-rama-master)
+- [Ignorar archivos en el respositorio con .gitignore](#ignorar-archivos-en-el-respositorio-con-gitignore)
+- [Readme.md es una excelente práctica](#readmemd-es-una-excelente-pr%c3%a1ctica)
+- [Tu sitio web público con GitHub Pages](#tu-sitio-web-p%c3%bablico-con-github-pages)
+
+### Multiples entornos de trabajo
+- [Git Rebase: Reorganizando el trabajo realizado](#git-rebase-reorganizando-el-trabajo-realizado)
+- [Git Stash: Guardar cambios en memoria y recuperarlos después](#git-stash-guardar-cambios-en-memoria-y-recuperarlos-despu%c3%a9s)
+- [Git Clean: Limpiar tu proyecto de archivos no deseados](#git-clean-limpiar-tu-proyecto-de-archivos-no-deseados)
+- [Git cherry-pick: Traer commits viejos al head de un branch](#git-cherry-pick-traer-commits-viejos-al-head-de-un-branch)
+
+### Comandos en Git para casos de emergencia
+- [Reconstruír commits en Git con amend](#reconstru%c3%adr-commits-en-git-con-amend)
+- [Git Reset y Reflog: Úsese en caso de emergencia](#git-reset-y-reflog-%c3%9asese-en-caso-de-emergencia)
+- [Buscar en archivos y commits de Git con Grep y log](#buscar-en-archivos-y-commits-de-git-con-grep-y-log)
+- [Comandos y recursos colaborativos en Git y Github](#comandos-y-recursos-colaborativos-en-git-y-github)
 
 ## Usar un sistema de control de versiones como Git
 
@@ -204,7 +213,7 @@ Cuando trabajamos con Git, nuestros archivos pueden vivir y moverse entre **4 di
 - **git rm --cached:** Mueve los archivos que le indiquemos al estado **Untracked.**
 - **git rm --force:** Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario **(pero debemos usar comandos más avanzados).**
 
-## ¿Qué es un Branch (rama) y cómo funciona un Merge en Git?
+## Qué es un Branch (rama) y cómo funciona un Merge en Git
 
 ![Preview Branches](https://static.platzi.com/media/public/uploads/branches_f9d7e237-6a15-4143-a4e9-cc5af06be833.PNG)
 
@@ -305,7 +314,7 @@ En cambio, si usamos **`git reset HEAD`**, lo único que haremos será mover est
 
 ## Flujo de trabajo básico con un repositorio remoto
 
-<!-- ![preview-1](assets/0001.jpg)
+![preview-1](assets/0001.jpg)
 ![preview-1](assets/0002.jpg)
 ![preview-1](assets/0003.jpg)
 ![preview-1](assets/0004.jpg)
@@ -316,7 +325,7 @@ En cambio, si usamos **`git reset HEAD`**, lo único que haremos será mover est
 ![preview-1](assets/0009.jpg)
 ![preview-1](assets/0010.jpg)
 ![preview-1](assets/0011.jpg)
-![preview-1](assets/0012.jpg) -->
+![preview-1](assets/0012.jpg)
 
 
 Por ahora, nuestro proyecto vive únicamente en nuestra computadora. Esto significa que no hay forma de que otros miembros del equipo trabajen en él.
@@ -650,6 +659,10 @@ git clean --dry-run
 ```
 git clean -f
 ```
+
+## Git cherry-pick: Traer commits viejos al head de un branch
+
+Existe un mundo alternativo en el cual vamos avanzando en una rama pero necesitamos en master uno de esos avances de la rama, para eso utilizamos el comando `git cherry-pick IDCommit`
 
 ## Reconstruír commits en Git con amend
 
