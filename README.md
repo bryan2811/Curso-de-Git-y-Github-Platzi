@@ -186,6 +186,7 @@ en Windows. Por lo tanto, la ruta del usuario con el que estás trabajando es /C
 - Segundo, crear un área en la memoria RAM, que conocemos como **Staging**, que guardará temporalmente nuestros archivos **(cuando ejecutemos un comando especial para eso)** y nos permitirá, más adelante, guardar estos cambios en el repositorio **(también con un comando especial)**.
 
 ### Ciclo de vida o estados de los archivos en Git:
+
 ![ciclo de vida en git](https://git-scm.com/book/en/v2/images/lifecycle.png "ciclo de vida en git")
 
 Cuando trabajamos con Git, nuestros archivos pueden vivir y moverse entre **4 diferentes estados** **(cuando trabajamos con repositorios remotos pueden ser más estados pero lo estudiaremos más adelante):**
